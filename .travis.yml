@@ -2,18 +2,24 @@
 
 os: linux
 
+dist: bionic
+
 arch:
   - amd64
   - ppc64le
 
 services:
   - docker
-sudo: false
+sudo: required
+
 git:
   depth: false
+
 language: go
+
 go:
   - 1.12.x
+
 script:
   - make docker-build
 
